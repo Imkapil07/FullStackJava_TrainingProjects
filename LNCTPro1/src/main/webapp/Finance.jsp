@@ -136,7 +136,13 @@ th {
                     <td><%=rs.getString(5) %></td>
                     <td><%=rs.getString(6) %></td>
                     <td><%=rs.getString(7) %></td>
+                    <%String status = rs.getString(7);%>
+                    <% 
+                    if((status).equals("Pending")){%>
                     <td><a href="Approve.jsp?request_id=<%=rs.getString(1) %>">Approve</a> <a href="Decline.jsp?request_id=<%=rs.getString(1) %>">Decline</a></td> 
+                    <%}else{%>
+                    	<td><%=rs.getString(8) %></td>
+                    <%}%>
                 </tr>
                 <%
                 }
